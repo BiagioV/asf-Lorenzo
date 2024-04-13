@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ticket Attivo</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #0d8307;
+  }
+  .app-header {
+    background-color: #0d8307;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+  }
+  .app-container {
+    max-width: 600px;
+    margin: 1px auto;
+    background: #fff;
+    border-radius: 0px;
+    padding: 10px;
+  }
+  .section {    
+    padding: 10px;
+    background: #e8ecec;
+    border-radius: 5px;
+    border: 1px solid #cacdcd;
+    margin-bottom: 10px;
+  }
+  .section:last-child {
+    border-bottom: none;
+  }
+  .section h2 {
+    font-size: 18px;
+    margin: 0;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  .section-content {
+    display: none;
+    padding: 0 10px 10px;
+  }
+  .section-content.active {
+    display: block;
+  }
+  .qr-code {
+    text-align: center;
+    padding: 20px;
+  }
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    color: #199c9c;
+    font-weight: bold;
+  }
+  .info div {
+    display: flex;
+    align-items: center;
+  }
+  .info img {
+    margin-right: 10px;
+  }
+  .app-logo {
+    width: 20px;
+  }
+  .app-title {
+    background-color: #fff;
+    padding: 5px 0;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #199c9c;
+  }
+  .dettaglio{
+    background-color: #0d8307; 
+    color: white; 
+    padding: 10px; 
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+</style>
+</head>
+<body>
+
+<div class="app-header">
+  <strong>Ticket Attivo</strong> 
+</div>
+
+<div class="app-container">
+
+  <img src="asf.png" alt="Logo" class="app-logo">
+  <div class="app-title">
+    MENS. EXTRA. GENERICO
+  </div>
+
+  <div class="section" onclick="toggleSection('info')">
+    <h2><i class="fas fa-id-card"></i> Informazioni tessera <span>&#9660;</span></h2>
+    <div class="section-content" id="info">
+      <div style="display: flex; align-items: center;">
+        <img src="foto.png" alt="Profile Photo" style="width:100px;height:auto; margin-right: 20px;">
+        <div>
+          <p><strong>VELUTHEDATHUP...</strong></p>
+          <p>VLTNZ09A26C933W</p>
+          <p>Tesserino n.<br>7324/3638</p>
+          <p>Scadenza:<br>03/07/2027</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="section" onclick="toggleSection('control')" style="margin-bottom: 0px;">
+    <h2><i class="fas fa-ticket-alt"></i>Controllo e validazione <span>&#9650;</span></h2>
+    <div class="section-content active" id="control">
+      <div class="qr-code">
+        <!-- Your QR Code Image -->
+        <img src="QR.png" alt="QR Code" width="200">
+        <p><u>Ingrandisci QRCode</p></u></p>
+      </div>
+    </div>
+
+    <div class="info">
+      <div>
+        <i class="fas fa-clock" style="margin-right: 5px;"></i><span>08:47:02</span>
+      </div>
+      <div>
+        <i class="fas fa-lock" style="margin-right: 5px;"></i><span>827</span>
+      </div>
+    </div>
+  </div>
+
+  <IMG SRC="gif.gif" width="100%">
+
+  <div class="ultimo">
+    <div>
+      <div class="dettaglio">
+        Da <strong>CAVALLASCA</strong> a <strong>BRECCIA</strong><br>
+        Valido dal <strong>01/03/2024</strong> a <strong>31/03/2024</strong>
+      </div>
+      <p>Emesso il:<strong><br>01/03/2024 - 07:28</strong></p>
+      <div style="display: flex; justify-content: space-between; align-items: baseline;">
+        <div>
+          <p>Costo:</p>
+        </div>
+        <div style="text-align: right;">
+          <p style="margin: 0; font-size: 1.3em; font-weight: bold;">40,00 €</p>
+        </div>
+      </div>
+      <hr style="color: #eee">
+      <p><strong>Dettagli:</strong></p>
+      <div style="display: flex; justify-content: space-between; align-items: baseline;">
+        <div>
+          <p>Codice ticket:</p>
+        </div>
+        <div style="text-align: right;">
+          <p style="margin: 0;">7324/49225</p>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: baseline;">
+        <div>
+          <p>Note:</p>
+        </div>
+        <div style="text-align: right;">
+          <p style="margin: 0;">Emissione TPLW</p>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+  
+</div>
+
+<script>
+function toggleSection(sectionId) {
+  var content = document.getElementById(sectionId);
+  content.classList.toggle('active');
+}
+</script>
+
+</body>
+</html>
